@@ -21,13 +21,14 @@ This repo is a reference for agents. In a new Expo project, tell the agent:
   - `eas-sim-verify-pr-ios`: validate a PR on iOS, comment with a link to the run
   - `eas-sim-preview-link`: comment an iOS web preview link on a PR
   - `eas-sim-verify-pr-android`: on-demand PR validation on Android, comment with a link to the run
+- **README format**: description, start the dev server, features (short bullets), TODO (next major goals)
 
 ## Layout
 
 | Path | Contents |
 | --- | --- |
 | `SETUP.md` | Step-by-step instructions for the agent |
-| `templates/` | `app.config.js`, `eas.json`, `.eas/workflows/` |
+| `templates/` | `app.config.js`, `eas.json`, `README.md`, `.eas/workflows/` |
 | `skills/` | Skills to copy into the project's `.agents/skills/` |
 
 ## Sources

@@ -151,9 +151,32 @@ Runtime version policy: `appVersion`.
 - `eas-sim-dev`: run and drive the app on an iOS cloud simulator with Metro.
 - `eas-sim-verify-pr-ios` / `eas-sim-verify-pr-android`: validate a PR and comment the result.
 - `eas-sim-preview-link`: post an iOS web preview link on a PR.
+
+## README
+
+Keep `README.md` in this order: description, start the dev server, Features (short bullets), TODO (next major goals).
+When a change adds a feature or completes a goal, update Features and TODO in the same change.
 ```
 
-## 9. First builds (ask first)
+## 9. Project README
+
+Format the project's `README.md` like `templates/README.md`. Use these sections, in this order:
+
+1. **Title and description**: the app name, then one or two sentences about what the app does. No feature list here.
+2. **Start the dev server**: only the commands to install packages and run `npx expo start`, and how to get a development build. Use the project's package manager (`bun`, `npm`, and so on). Do not explain variants, workflows, or skills here.
+3. **Features**: short bullets, 3–8 words each. Only features that work now.
+4. **TODO**: the next major goals, one bullet each. Not small fixes or bugs.
+
+Rules:
+
+- Keep the existing content that is still correct. Move it into these sections. Do not delete information without asking the user.
+- If you do not know the description, features, or goals, ask the user. Do not make them up. For a new project from a template, write an empty Features list and ask for the TODO items.
+- Keep the whole README short. Put long documentation in other files and link to it.
+- Replace `<ABBR>`.
+
+When features or goals change, update the Features and TODO sections in the same change.
+
+## 10. First builds (ask first)
 
 The simulator skills need development builds. If the user agrees:
 
@@ -169,4 +192,5 @@ npx --yes eas-cli@latest workflow:run .eas/workflows/dev-builds.yaml
 - [ ] Each workflow passes `workflow:validate`
 - [ ] Skills are in `.agents/skills/`, with links in `.claude/skills/`
 - [ ] `.gitignore` has `.env.eas-simulator`
-- [ ] No `<ABBR>`, `<slug>`, or `<SLUGID>` placeholders are left: `grep -rn "<ABBR>\|<SLUGID>\|<slug>" app.config.js .eas .agents`
+- [ ] `README.md` has the sections in step 9: description, start the dev server, features, TODO
+- [ ] No `<ABBR>`, `<slug>`, or `<SLUGID>` placeholders are left: `grep -rn "<ABBR>\|<SLUGID>\|<slug>" app.config.js README.md .eas .agents`
